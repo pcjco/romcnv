@@ -924,7 +924,7 @@ static int convert_rom(char *game_name)
                 case INIT_kof2003:    neo_pcm2_swap(5);        break;
                 case INIT_kf2k3bl:    neo_pcm2_swap(5);        break;
                 case INIT_kf2k3pl:    neo_pcm2_swap(5);        break;
-                case INIT_samsh5sp:neo_pcm2_swap(6);        break;
+                case INIT_kf2k3upl:   neo_pcm2_swap(5);        break;
                 case INIT_pnyaa:    neo_pcm2_snk_1999(4);    break;
                 case INIT_mslug4:    neo_pcm2_snk_1999(8);    break;
                 case INIT_rotd:    neo_pcm2_snk_1999(16);    break;
@@ -1079,6 +1079,7 @@ static int convert_rom(char *game_name)
                 break;
 
             case INIT_kf2k3upl:
+                cmc50_neogeo_gfx_decrypt(0x9d);
                 neogeo_bootleg_sx_decrypt(2);
                 break;
 
