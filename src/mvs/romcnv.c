@@ -1098,6 +1098,7 @@ static int convert_rom(char *game_name)
             case INIT_cthd2k3a:
             case INIT_ct2k3sa:
                 cthd2003_cx_decrypt();
+                cthd2003_sx_decrypt();
                 break;
 
             case INIT_ct2k3sp:

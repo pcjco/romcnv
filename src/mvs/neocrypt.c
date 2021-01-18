@@ -1129,6 +1129,18 @@ int cthd2003_cx_decrypt(void)
 	return 1;
 }
 
+int cthd2003_sx_decrypt(void)
+{
+	INT32 i, n;
+	for (i = 0; i < 0x8000; i++)
+	{
+		n = memory_region_gfx2[0x08000 + i];
+		memory_region_gfx2[0x08000 + i] = memory_region_gfx2[0x10000 + i];
+		memory_region_gfx2[0x10000 + i] = n;
+	}
+    return 1;
+}
+
 int ct2k3sp_sx_decrypt(void)
 {
 	UINT32 i, offset;
@@ -1158,7 +1170,6 @@ int ct2k3sp_sx_decrypt(void)
 	}
 	return 0;
 }
-
 int svcboot_cx_decrypt(void)
 {
 	const UINT8 idx_tbl[0x10] = { 0, 1, 0, 1, 2, 3, 2, 3, 3, 4, 3, 4, 4, 5, 4, 5 };
